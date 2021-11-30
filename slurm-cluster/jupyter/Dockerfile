@@ -22,5 +22,6 @@ ENV USER admin
 ENV SHELL bash
 
 RUN apt install libopenmpi-dev -y && pip3 install mpi4py && pip3 install jupyterlab_slurm && pip3 install nbgitpuller
+RUN sudo service munge start
 
 ENTRYPOINT ["/etc/slurm-llnl/docker-entrypoint.sh"]
